@@ -32,6 +32,7 @@ QtObject {
         onTriggered: JS.SpeedTimer()
         interval: 5
     	}
+}
 
     	property Timer engineTempTimer: Timer{
         running: true
