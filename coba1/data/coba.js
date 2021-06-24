@@ -46,20 +46,29 @@ function setBarRpm() {
 }
 
 function setSpeedBar() {
-    values.speed = (CurrentSpeed)
+    variant.speed = (CurrentSpeed)
 }
 
 function setEnggTemp() {
-    values.enggTemp = (CurrentEnggTemp)
+    variant.enggTemp = (CurrentEnggTemp)
 }
 
 function setBattTemp() {
-    values.battTemp = (CurrentBattTemp)
+    variant.battTemp = (CurrentBattTemp)
 }
 
 function setBattLevel() {
-    values.battLev = (CurrentBattLev)
+    variant.battLev = (CurrentBattLev)
 }
+
+variant.rightCent = (RightCentState)
+variant.leftCent = (LeftCentState)
+variant.engine = (EngineState)
+variant.abs = (AbsState)
+variant.warn = (WarnState)
+variant.lamp = (LampState)
+variant.safety = (SafetyState)
+variant.proximity = (ProximityState)
 
 /* MAIN LOOP*/
 function SpeedTimer() {
@@ -71,7 +80,7 @@ function SpeedTimer() {
 	setSpeedBar()
 }
 
-function SpeedRpm() {
+function RpmTimer() {
     if (CurrentRpm > RpmBarCount){
 		RpmSpeed --
 	}else{
