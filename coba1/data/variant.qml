@@ -3,9 +3,9 @@ import QtQuick 2.10
 import "coba.js" as JS
 
 QtObject {
-    id: variant
+	id: variant
 
-    property int leftCent
+    	property int leftCent
 	property int rightCent
 	property int abs
 	property int engine
@@ -19,21 +19,21 @@ QtObject {
 	property int battTemp
 	property int battLev
 
-    property Timer rpmTimer: Timer{
+    	property Timer rpmTimer: Timer{
         running: true
         repeat: true
         onTriggered: JS.rpmTimer()
         interval: 10
-    }
+    	}
 
-    property Timer speedTimer: Timer{
+    	property Timer speedTimer: Timer{
         running: true
         repeat: true
         onTriggered: JS.SpeedTimer()
         interval: 5
-    }
+    	}
 
-    property Timer engineTempTimer: Timer{
+    	property Timer engineTempTimer: Timer{
         running: true
         repeat: true
         onTriggered: JS.EnggTempTimer
