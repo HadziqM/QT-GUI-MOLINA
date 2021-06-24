@@ -3,9 +3,9 @@
 /* ICON VRIABLE
 state setiap icon
 PERLU DIUPDATE
-0 = MATI , 1,DAN 2 NYALA  
+0 = MATI , 1,DAN 2 NYALA
 */
-var LeftCentState = 0
+var LeftCentState = 1
 var RightCentState = 0
 var EngineState = 1
 var AbsState = 1
@@ -28,90 +28,86 @@ var SpeedBarCount = 10
 var RpmBarCount = 30
 var EnggTempBarCount = 70
 var BattTempBarCount = 50
-var BattLevelBarCount = 100
+var BattLevelBarCount = 80
 
 
 /* NILAI SEBELUMNYA
-PERLU UPDATE CODE AGAR BISA UPDATE DATA SEBELUMNYA AOUTOMATIS
+PERLU UPDATE CODE AGAR BISA UPDATE DATA SEBELUMNYA SECARA OUTOMATIS
 */
 var CurrentSpeed = 50
 var CurrentRpm = 100
 var CurrentEnggTemp = 10
 var CurrentBattTemp = 40
-var CurrentBattLev = 70
+var CurrentBattLev = 0
 
 /*set Fungsi Variable ke QML*/
 function setBarRpm() {
-    variant.rpm = (CurrentRpm)
+    values.rpm = (CurrentRpm)
 }
 
 function setSpeedBar() {
-    variant.speed = (CurrentSpeed)
+    values.speed = (CurrentSpeed)
 }
 
 function setEnggTemp() {
-    variant.enggTemp = (CurrentEnggTemp)
+    values.enggTemp = (CurrentEnggTemp)
 }
 
 function setBattTemp() {
-    variant.battTemp = (CurrentBattTemp)
+    values.battTemp = (CurrentBattTemp)
 }
 
 function setBattLevel() {
-    variant.battLev = (CurrentBattLev)
+    values.battLev = (CurrentBattLev)
 }
-
-variant.rightCent = (RightCentState)
-variant.leftCent = (LeftCentState)
-variant.engine = (EngineState)
-variant.abs = (AbsState)
-variant.warn = (WarnState)
-variant.lamp = (LampState)
-variant.safety = (SafetyState)
-variant.proximity = (ProximityState)
-
-/* MAIN LOOP*/
-function SpeedTimer() {
+/* MAIN LOOP */
+function speedTimer() {
     if (CurrentSpeed > SpeedBarCount){
-		CurrentSpeed --
-	}else{
-		CurrentSpeed ++
-	}
-	setSpeedBar()
+        CurrentSpeed = CurrentSpeed - 1
+    }else if (CurrentSpeed < SpeedBarCount){
+        CurrentSpeed = CurrentSpeed + 1
+    }else if (CurrentSpeed == SpeedBarCount){
+    }
+    setSpeedBar()
 }
 
-function RpmTimer() {
+function rpmTimer() {
     if (CurrentRpm > RpmBarCount){
-		RpmSpeed --
-	}else{
-		RpmSpeed ++
-	}
-	setRpmBar()
+        CurrentRpm --
+    }else if (CurrentRpm < RpmBarCount){
+        CurrentRpm ++
+    }else if (CurrentRpm == RpmBarCount){
+    }
+    setBarRpm()
 }
 
-function EnggTempTimer() {
+function enggTempTimer() {
     if (CurrentEnggTemp > EnggTempBarCount){
-		CurrentEnggTemp --
-	}else{
-		CurrentEnggTemp ++
-	}
-	setEnggTemp()
+        CurrentEnggTemp --
+    }else if(CurrentEnggTemp < EnggTempBarCount) {
+        CurrentEnggTemp ++
+    }else if (CurrentEnggTemp == EnggTempBarCount){
+    }
+    setEnggTemp()
 }
 
-function BattTempTimer() {
+function battTempTimer() {
     if (CurrentBattTemp > BattTempBarCount){
-		CurrentBattTemp --
-	}else{
-		CurrentBattTemp ++
-	}
-	setBattTemp()
+        CurrentBattTemp --
+    }else if (CurrentBattTemp < BattTempBarCount){
+        CurrentBattTemp ++
+    }else if (CurrentBattTemp == BattTempBarCount){
+    }
+    setBattTemp()
 }
 
-function BattLevTimer() {
+function battLevTimer(){
     if (CurrentBattLev > BattLevelBarCount){
-		CurrentBattLev --
-	}else{
-		CurrentBattLev ++
-	}
-	setBattLevel()
+        CurrentBattLev = CurrentBattLev - 1
+    }else if (CurrentBattLev < BattLevelBarCount){
+        CurrentBattLev = CurrentBattLev + 1
+    }else if (CurrentBattLev == BattLevelBarCount){
+
+    }
+    setBattLevel()
 }

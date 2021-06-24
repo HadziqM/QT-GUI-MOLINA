@@ -163,7 +163,7 @@ Item {
 
 /*##^##
 Designer {
-    D{i:0;formeditorZoom:0.75}D{i:2}D{i:19}
+    D{i:0;formeditorZoom:0.75}D{i:2}
 }
 ##^##*/
 

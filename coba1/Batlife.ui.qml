@@ -3,11 +3,11 @@ import QtQuick.Controls 2.15
 import QtQuick.Timeline 1.0
 
 Item {
-    id: batterybar
+    id: batterytempbar
     width: 700
     height: 70
     property int initial: 1
-    property int progress: timeline.currentFrame
+    property alias progress: timeline.currentFrame
     property int calculate: 100 - timeline.currentFrame
 
     Text {
@@ -16,7 +16,7 @@ Item {
         y: 5
         width: 75
         height: 60
-        text: batterybar.calculate
+        text: batterytempbar.calculate
         font.pixelSize: 35
         horizontalAlignment: Text.AlignLeft
         verticalAlignment: Text.AlignVCenter
@@ -27,7 +27,7 @@ Item {
         animations: [
             TimelineAnimation {
                 id: timelineAnimation
-                properties: "cuurentFrame"
+                properties: "currentFrame"
                 pingPong: true
                 loops: -1
                 duration: 5000
@@ -132,7 +132,12 @@ Item {
     states: [
         State {
             name: "data"
-            when: batterybar.initial == 0
+            when: batterytempbar.initial == 0
+
+            PropertyChanges {
+                target: timeline
+                enabled: true
+            }
 
             PropertyChanges {
                 target: timelineAnimation
@@ -141,7 +146,7 @@ Item {
         },
         State {
             name: "animated"
-            when: batterybar.initial == 1
+            when: batterytempbar.initial == 1
 
             PropertyChanges {
                 target: timeline

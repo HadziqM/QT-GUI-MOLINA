@@ -2,6 +2,8 @@ import QtQuick 2.15
 import QtQuick.Controls 2.15
 import coba1 1.0
 import Data 1.0 as Data
+import QtQuick.Studio.Components 1.0
+import QtQuick.Studio.Effects 1.0
 
 Rectangle {
     id: main
@@ -30,7 +32,7 @@ Rectangle {
         id: proximitysensor
         x: 1070
         y: 258
-        initial: 1
+        initial: 2
     }
 
     Suhu {
@@ -212,71 +214,71 @@ Rectangle {
             PropertyChanges {
                 target: speedbar
                 initial: 0
-                progress: Data.variant.speed
+                progress: Data.Values.speed
             }
 
             PropertyChanges {
                 target: ennginebar
-                progress: 0
-                initial: Data.variant.rpm
+                progress: Data.Values.rpm
+                initial: 0
             }
 
             PropertyChanges {
                 target: proximitysensor
-                initial: Data.variant.proximity
+                initial: Data.Values.proximity
             }
 
             PropertyChanges {
                 target: battempbar
-                progress: Data.variant.battTemp
+                progress: Data.Values.battTemp
                 initial: 0
             }
 
             PropertyChanges {
                 target: abs
-                initial: Data.variant.abs
+                initial: Data.Values.abs
             }
 
             PropertyChanges {
                 target: enggtempbar
-                progress: Data.variant.enggTemp
+                progress: Data.Values.enggTemp
                 initial: 0
             }
 
             PropertyChanges {
                 target: batlife
-                progress: Data.variant.battLev
+                progress: Data.Values.battLev
                 initial: 0
             }
 
             PropertyChanges {
                 target: leftcent
-                initial: Data.variant.leftcent
+                initial: Data.Values.leftCent
             }
 
             PropertyChanges {
                 target: warning
-                initial: Data.variant.warn
+                initial: Data.Values.warn
             }
 
             PropertyChanges {
                 target: lamp
-                initial: Data.variant.lamp
+                initial: Data.Values.lamp
             }
 
             PropertyChanges {
                 target: safety
-                initial: Data.variant.safety
+                initial: Data.Values.safety
             }
 
             PropertyChanges {
                 target: machine
-                initial: Data.variant.machine
+                initial: Data.Values.engine
             }
 
             PropertyChanges {
                 target: rightcent
-                initial: Data.variant.rightCent
+                initial: Data.Values.rightCent
             }
         },
         State {
@@ -293,7 +295,7 @@ Rectangle {
 
 /*##^##
 Designer {
-    D{i:0;formeditorZoom:0.33}D{i:17}D{i:18}D{i:19}D{i:20}D{i:21}D{i:22}
+    D{i:0;formeditorZoom:0.33}
 }
 ##^##*/
 
