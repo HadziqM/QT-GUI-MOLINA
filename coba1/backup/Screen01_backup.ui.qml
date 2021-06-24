@@ -1,7 +1,6 @@
 import QtQuick 2.15
 import QtQuick.Controls 2.15
 import coba1 1.0
-import Data 1.0 as Data
 
 Rectangle {
     id: main
@@ -212,71 +211,76 @@ Rectangle {
             PropertyChanges {
                 target: speedbar
                 initial: 0
-                progress: Data.variant.speed
+                progress: 51
             }
 
             PropertyChanges {
                 target: ennginebar
-                progress: 0
-                initial: Data.variant.rpm
+                progress: 10
+                initial: 0
             }
 
             PropertyChanges {
                 target: proximitysensor
-                initial: Data.variant.proximity
+                initial: 0
             }
 
             PropertyChanges {
                 target: battempbar
-                progress: Data.variant.battTemp
+                progress: 60
                 initial: 0
             }
 
             PropertyChanges {
                 target: abs
-                initial: Data.variant.abs
+                initial: 0
             }
 
             PropertyChanges {
                 target: enggtempbar
-                progress: Data.variant.enggTemp
+                progress: 90
                 initial: 0
             }
 
             PropertyChanges {
                 target: batlife
-                progress: Data.variant.battLev
+                progress: 30
                 initial: 0
             }
 
             PropertyChanges {
                 target: leftcent
-                initial: Data.variant.leftcent
+                initial: 0
             }
 
             PropertyChanges {
                 target: warning
-                initial: Data.variant.warn
+                initial: 0
+            }
+
+            PropertyChanges {
+                target: batt
+                initial: 0
             }
 
             PropertyChanges {
                 target: lamp
-                initial: Data.variant.lamp
+                initial: 0
             }
 
             PropertyChanges {
                 target: safety
-                initial: Data.variant.safety
+                initial: 0
             }
 
             PropertyChanges {
                 target: machine
-                initial: Data.variant.machine
+                initial: 0
             }
 
             PropertyChanges {
                 target: rightcent
-                initial: Data.variant.rightCent
+                initial: 0
             }
         },
         State {
